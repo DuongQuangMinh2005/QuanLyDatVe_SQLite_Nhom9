@@ -1,0 +1,275 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202534">
+
+    <!-- Background máy bay -->
+    <ImageView
+        android:id="@+id/img_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_airplane_3"
+        android:alpha="0.98"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Overlay tối -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#D91E2136"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Nội dung chính -->
+    <LinearLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:gravity="center"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ABC Airlines"
+            android:textColor="#9dcaff"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.02"
+            android:layout_marginBottom="8dp"
+            android:shadowColor="#CC23293a"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="6" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="28dp"
+            android:src="@drawable/user_avatar"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#8B5CF6" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="12dp"
+            app:cardBackgroundColor="#252C3D"
+            android:layout_marginBottom="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="26dp"
+                android:paddingRight="26dp"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Đăng nhập"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#cfd8dc"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.02"/>
+
+                <View
+                    android:layout_width="36dp"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="18dp"
+                    android:background="#4F5BCB"
+                    android:alpha="0.3"/>
+
+                <!-- Username -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxBackgroundColor="#23293a"
+                    app:boxStrokeColor="#8B5CF6"
+                    app:boxStrokeWidth="2dp"
+                    app:startIconDrawable="@drawable/ic_profile"
+                    app:startIconTint="#b0beca"
+                    android:hint="Tên đăng nhập"
+                    android:textColorHint="#b0beca">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:inputType="text"
+                        android:textColor="#cfd8dc"
+                        android:textSize="16sp"
+                        android:paddingStart="46dp"
+                        android:paddingEnd="16dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Password -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxBackgroundColor="#23293a"
+                    app:boxStrokeColor="#8B5CF6"
+                    app:boxStrokeWidth="2dp"
+                    app:startIconDrawable="@drawable/ic_password"
+                    app:startIconTint="#b0beca"
+                    android:hint="Mật khẩu"
+                    android:textColorHint="#b0beca">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:inputType="textPassword"
+                        android:textColor="#cfd8dc"
+                        android:textSize="16sp"
+                        android:paddingStart="46dp"
+                        android:paddingEnd="16dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Button Đăng nhập với hiệu ứng gradient nếu muốn -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_dang_nhap"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:text="Đăng nhập"
+            android:textSize="17sp"
+            android:textColor="#f3eaff"
+            app:cornerRadius="12dp"
+            style="@style/Widget.MaterialComponents.Button"
+            android:backgroundTint="#9141f7"
+            android:elevation="8dp"
+            app:iconTint="#f3eaff"
+            app:iconPadding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/btn_dang_ky"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa có tài khoản? Đăng ký"
+            android:textColor="#b0beca"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="normal"/>
+
+        <!-- Thanh chia "OR" -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="18dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#BDB3ED" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HOẶC"
+                android:textSize="14sp"
+                android:textColor="#AA5CF6"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#BDB3ED" />
+        </LinearLayout>
+
+        <!-- Dòng nút social -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <!-- Nút Facebook -->
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/social_circle_bg">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_facebook"
+                    app:tint="#8B5CF6" />
+            </FrameLayout>
+
+            <!-- Nút Twitter -->
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/social_circle_bg">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_twitter"
+                    app:tint="#8B5CF6" />
+            </FrameLayout>
+
+            <!-- Nút Google -->
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/social_circle_bg">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_google"
+                    app:tint="#8B5CF6" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

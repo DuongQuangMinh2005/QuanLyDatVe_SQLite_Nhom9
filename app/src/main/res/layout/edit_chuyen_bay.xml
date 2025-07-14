@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212334">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#292C40"
+        android:elevation="4dp"
+        android:title="Chỉnh sửa chuyến bay"
+        android:titleTextColor="#FAFAFA"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:navigationIconTint="#FAFAFA" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:background="#212334">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="24dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:cardBackgroundColor="#292C40">
+
+                <ImageView
+                    android:id="@+id/hinhChuyenBay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/user_avatar"
+                    android:clipToOutline="true"
+                    android:background="#26283A"/>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Điểm đi -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#B084FB"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundColor="#B2B6C8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/diemDi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Điểm đi"
+                    android:textColor="#CC000000"
+                    android:textColorHint="#AD749B" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Điểm đến -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#B084FB"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundColor="#B2B6C8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/diemDen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Điểm đến"
+                    android:textColor="#CC000000"
+                    android:textColorHint="#AD749B" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Ngày đi -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#B084FB"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundColor="#B2B6C8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ngayDi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ngày đi (dd/MM/yyyy)"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:textColor="#CC000000"
+                    android:textColorHint="#AD749B"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Ngày về -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#A855F7"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundColor="#B2B6C8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ngayVe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ngày về (dd/MM/yyyy)"
+                    android:focusable="false"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:textColor="#CC000000"
+                    android:textColorHint="#AD749B"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Giá vé -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:boxBackgroundMode="outline"
+                app:boxStrokeColor="#B2B6C8"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp"
+                app:boxBackgroundColor="#B2B6C8">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/giaVe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Giá vé (VNĐ)"
+                    android:inputType="numberDecimal"
+                    android:textColor="#CC000000"
+                    android:textColorHint="#AD749B"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lưu thay đổi"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#A855F7"
+                android:background="@drawable/bg_button_rounded"
+                android:elevation="4dp"
+                android:padding="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

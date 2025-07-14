@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".activities.MainActivity">
+
+    <!-- Nền máy bay mờ -->
+    <ImageView
+        android:id="@+id/airplane_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.55"
+        android:scaleType="centerCrop"
+        android:src="@drawable/airplane_background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Toàn bộ nội dung cuộn (trừ nav bar) đặt trong NestedScrollView nếu cần cuộn -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            android:paddingTop="60dp">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chào mừng bạn"
+                android:textSize="30sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:shadowColor="#80000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="5"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/subtitle_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Khám phá hành trình, chạm đến bầu trời"
+                android:textColor="#E0E0E0"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_flight_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/gradient_button"
+                android:drawableStart="@drawable/ic_search_flight"
+                android:drawablePadding="12dp"
+                android:elevation="6dp"
+                android:padding="14dp"
+                android:text="Tra cứu chuyến bay"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:fontFamily="sans-serif-medium" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/newsBar"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#253143"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingEnd="14dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_newspaper"
+                    android:layout_marginEnd="12dp"
+                    app:tint="#6DA8FF" />
+
+                <com.example.quanlydatve_sqlite.customview.AutoScrollTextView
+                    android:id="@+id/news_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:scrollHorizontally="true"
+                    android:ellipsize="marquee"
+                    android:padding="8dp"
+                    android:text="Tin tức cực HOT: Vé máy bay giá rẻ chỉ từ 999K • Đặt ngay kẻo lỡ!"
+                    android:textColor="#FFC107"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:singleLine="true"
+                    android:gravity="center_vertical" />
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_marginStart="8dp"
+                    app:tint="#7F8FA6" /> <!-- Xám xanh nhạt sang trọng -->
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+                android:id="@+id/label_featured"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chuyến bay nổi bật"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewChuyenBay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:paddingHorizontal="16dp"
+                android:paddingTop="12dp"
+                android:clipToPadding="false" />
+
+            <TextView
+                android:id="@+id/titleNhanVien"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhân viên"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="80dp"
+                    android:background="#0074D9"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:gravity="center_vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        app:cardCornerRadius="32dp"
+                        app:cardElevation="2dp"
+                        android:layout_marginEnd="16dp">
+
+                        <ImageView
+                            android:id="@+id/hinhAdmin"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/user_avatar" />
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="1dp">
+
+                        <TextView
+                            android:id="@+id/tenAdmin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dr. Stefen Albert"
+                            android:textColor="#E6F0FF"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/vaiTro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Heart Specialist"
+                            android:textColor="#E6F0FF"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:text="Thông tin"
+                        android:textAllCaps="false"
+                        android:textSize="13sp"
+                        android:textColor="#0074D9"
+                        android:backgroundTint="#D6EAF8"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:layout_marginStart="8dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="bottom"
+        android:elevation="12dp"
+        app:itemIconSize="32dp"
+        app:itemIconTint="@color/nav_selector"
+        app:itemRippleColor="@color/ripple_light"
+        app:itemTextColor="@color/nav_selector"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

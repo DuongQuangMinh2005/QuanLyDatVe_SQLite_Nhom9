@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:layout_margin="12dp"
+    android:background="@drawable/card_gradient_dark"
+    android:elevation="6dp"
+    android:clipToPadding="false"
+    android:gravity="center_horizontal">
+
+    <!-- Nội dung vé -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:gravity="start">
+
+        <TextView
+            android:id="@+id/txtTuDen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hà Nội → Đà Nẵng"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#97C1F7"
+            android:letterSpacing="0.01"
+            android:lineHeight="24sp"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="7dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_calendar"
+                android:layout_marginEnd="4dp"
+                app:tint="#b0beca" />
+
+            <TextView
+                android:id="@+id/txtNgayDi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày đi: 01/06/2025"
+                android:textSize="13sp"
+                android:textColor="#cfd8dc"
+                android:lineHeight="20sp"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_calendar"
+                android:layout_marginEnd="4dp"
+                app:tint="#b0beca" />
+
+            <TextView
+                android:id="@+id/txtNgayVe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày về: 05/06/2025"
+                android:textSize="13sp"
+                android:textColor="#cfd8dc"
+                android:lineHeight="20sp"
+                android:maxLines="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_money"
+                android:layout_marginEnd="4dp"
+                app:tint="#FFC371" />
+
+            <TextView
+                android:id="@+id/txtGia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giá vé: 1.500.000 VNĐ"
+                android:textSize="15sp"
+                android:textColor="#FFC371"
+                android:textStyle="bold"
+                android:lineHeight="20sp"
+                android:maxLines="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/imgHinh"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Hình ảnh chuyến bay"
+        android:background="@drawable/image_rounded_corners"
+        android:clipToOutline="true"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btnDatVe"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="Đặt vé"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:background="@drawable/gradient_button_dark"
+        android:textColor="#cfd8dc"
+        android:letterSpacing="0.04"
+        android:fontFamily="sans-serif-medium"
+        android:elevation="2dp"/>
+</LinearLayout>

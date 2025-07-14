@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191C24">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_gradient_header"
+        android:elevation="8dp"
+        android:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/ic_arrow_back" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="0dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="36dp"
+            android:paddingStart="28dp"
+            android:paddingEnd="28dp"
+            android:gravity="center_horizontal">
+
+            <!-- Avatar -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_avatar"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/user_avatar"
+                app:civ_border_width="3dp"
+                app:civ_border_color="#7C3AED" />
+
+            <!-- Label + EditText: Họ tên -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Họ tên"
+                android:textSize="14sp"
+                android:textColor="#8B93B8"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/edtHoTen"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_info_field"
+                android:hint="Nhập họ tên"
+                android:textColor="#ECEBFF"
+                android:textColorHint="#A0A3B1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Label + EditText: Ngày sinh -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày sinh"
+                android:textSize="14sp"
+                android:textColor="#8B93B8"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/edtNgaySinh"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_info_field"
+                android:hint="dd/MM/yyyy"
+                android:textColor="#ECEBFF"
+                android:textColorHint="#A0A3B1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Label + EditText: Email -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="14sp"
+                android:textColor="#8B93B8"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_info_field"
+                android:hint="Nhập email"
+                android:textColor="#ECEBFF"
+                android:textColorHint="#A0A3B1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Label + EditText: Số điện thoại -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại"
+                android:textSize="14sp"
+                android:textColor="#8B93B8"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_info_field"
+                android:hint="Nhập số điện thoại"
+                android:textColor="#ECEBFF"
+                android:textColorHint="#A0A3B1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Label + EditText: Mật khẩu -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mật khẩu"
+                android:textSize="14sp"
+                android:textColor="#8B93B8"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="4dp"/>
+            <EditText
+                android:id="@+id/edtMatKhau"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_info_field"
+                android:hint="Nhập mật khẩu"
+                android:inputType="textPassword"
+                android:textColor="#ECEBFF"
+                android:textColorHint="#A0A3B1"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="18dp"/>
+
+            <!-- Button Action (2 nút) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:weightSum="2"
+                android:layout_marginTop="20dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnCancle"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Hủy"
+                    android:textColor="#FFFFFF"
+                    android:background="@drawable/bg_btn_gray_transparent"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15sp"
+                    android:layout_marginEnd="10dp"
+                    android:stateListAnimator="@null" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="Lưu thay đổi"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#7C3AED"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="15sp"
+                    android:layout_marginStart="10dp"
+                    android:stateListAnimator="@null"
+                    android:background="@drawable/bg_btn_soft"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
